@@ -1,16 +1,16 @@
 ## Reference
 
 
-::: mdify.parsers
+::: mdify.src.parsers
 ---
-::: mdify.layout
+::: mdify.src.layout
 ---
-::: mdify.models
+::: mdify.src.models
 ---
-::: mdify.ocr
+::: mdify.src.ocr
 ---
-::: mdify.output
+::: mdify.src.output
 ---
-::: mdify.extractors
+::: mdify.src.extractors
 ---
-::: mdify.utils
+::: mdify.src.utils
