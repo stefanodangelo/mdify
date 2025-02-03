@@ -8,3 +8,6 @@ scratch/
 *.txt
 site/
 pdfs/
+
+!requirements.txt
+!requirements-docs.txt

@@ -12,6 +12,8 @@ MDify categorizes images into general pictures and charts and extracts tables of
 Whether you're working with *research papers*, *reports*, or *general documents*, MDify ensures the data is extracted in a structured, clean, and machine-readable format, making it ideal for tasks like fine-tuning, question answering, and document analysis in the context of Large Language Models (**LLMs**). \
 By converting complex PDFs into well-structured Markdown, this tool helps streamline the input process for LLM applications, reducing the time spent on manual cleaning and formatting. With features like table extraction, image preservation, and high-quality OCR, MDify is a perfect fit for preparing large volumes of data for AI models.
 
+**Note**: Currently this tool only supports English documents.
+
 
 ## 🚀 Installation  
 First, install **MDify** via PyPI:  
@@ -50,6 +52,11 @@ You can then choose the outputs to save using `DocumentParser(save_artifacts=...
 - Currently, MDify can only handle PDFs and images (such as text extracts, document scans, etc.). Therefore, please make sure that your documents meet the requirements in order for the tool to work best.
 - Diagrams are not supported yet, therefore if you use the `DESCRIBED` write mode they may be analyzed incorrectly.
 
+
+## 📄 Documentation
+For more information, please refer to the [official documentation](https://stefanodangelo.github.io/mdify/).
+
+
 ## 🤝 Contributing
 MDify is an independent, open-source project developed and maintained by passionate developers. Your support is highly valued, and any contributions — whether through issues, bug reports, feature requests, or pull requests — are more than welcome!
 
@@ -57,7 +64,7 @@ If you are interested in improving this library or adding new features, please d
 
 
 ## 💖 Support
-Being an independent developer, I would much appreciate if you could\
+Being an independent developer, I would much appreciate it if you could\
 [![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=buy%20me%20a%20coffee&emoji="☕"&slug=stefanodangelo&button_colour=FF5F5F&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00)](https://www.buymeacoffee.com/stefanodangelo)
 
 
