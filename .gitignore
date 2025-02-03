@@ -1,0 +1,10 @@
+*.pt
+processed/
+venv/
+models/
+__pycache__
+.vscode
+scratch/
+*.txt
+site/
+pdfs/
