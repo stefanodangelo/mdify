@@ -8,6 +8,9 @@ scratch/
 site/
 pdfs/
 .cache/
+*.egg-info/
+build/
+dist/
 
 !requirements.txt
 !requirements-docs.txt
