@@ -35,6 +35,6 @@ setup(
     package_data={
         "mdify": ["configs/*.yml"],
     },
-    # long_description=Path("README.md").read_text(),
-    # long_description_content_type="text/markdown",
+    long_description=Path("README.md").read_text(),
+    long_description_content_type="text/markdown",
 )
