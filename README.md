@@ -1,9 +1,9 @@
 ![PyPI](https://img.shields.io/pypi/v/mdify?color=blue)
 ![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY%20NC%204.0-lightgrey)
 
-# MDify: Convert any PDF to Markdown  
+# MDify: Convert any document to Markdown  
 
-**MDify** is a powerful Python library for converting PDFs (or image-based documents) into clean, structured Markdown.
+**MDify** is a powerful Python library for converting documents into clean, structured Markdown.
 
 Unlike other tools, **MDify** can accurately extract **tables, charts, and images**, even offering the option to save them separately for further use. \
 This is particularly useful when working with documents like financial statements, spreadsheets, and data-rich reports, which usually have lots of tables and images. \
@@ -12,8 +12,7 @@ MDify categorizes images into general pictures and charts and extracts tables of
 Whether you're working with *research papers*, *reports*, or *general documents*, MDify ensures the data is extracted in a structured, clean, and machine-readable format, making it ideal for tasks like fine-tuning, question answering, and document analysis in the context of Large Language Models (**LLMs**). \
 By converting complex PDFs into well-structured Markdown, this tool helps streamline the input process for LLM applications, reducing the time spent on manual cleaning and formatting. With features like table extraction, image preservation, and high-quality OCR, MDify is a perfect fit for preparing large volumes of data for AI models.
 
-**Note**: Currently this tool only supports English documents.
-
+**IMPORTANT**: Currently this tools only supports PDFs and images (such as text extracts, document scans, etc.) written in English.
 
 ## 🚀 Installation  
 First, install **MDify** via PyPI:  
@@ -49,7 +48,6 @@ You can then choose the outputs to save using `DocumentParser(save_artifacts=...
 
 **Notes**:
 - The first run will take ~2 minutes to download the necessary models.
-- Currently, MDify can only handle PDFs and images (such as text extracts, document scans, etc.). Therefore, please make sure that your documents meet the requirements in order for the tool to work best.
 - Diagrams are not supported yet, therefore if you use the `DESCRIBED` write mode they may be analyzed incorrectly.
 
 
