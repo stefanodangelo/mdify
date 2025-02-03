@@ -1,7 +1,7 @@
 from pathlib import Path
 import setuptools
 
-VERSION = "0.1.2"  # PEP-440
+VERSION = "0.1.3"  # PEP-440
 NAME = "mdify"
 INSTALL_REQUIRES = open('./requirements.txt', 'r').read().split('\n')
 AUTHOR = r"Stefano D'Angelo"
