@@ -1,4 +1,4 @@
-![PyPI](https://img.shields.io/pypi/v/mdify?color=blue)
+![PyPI](https://img.shields.io/pypi/v/mdify?color=red)
 ![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY%20NC%204.0-lightgrey)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14795744.svg)](https://doi.org/10.5281/zenodo.14795744)
 
