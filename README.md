@@ -1,5 +1,6 @@
 ![PyPI](https://img.shields.io/pypi/v/mdify?color=blue)
 ![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY%20NC%204.0-lightgrey)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14795744.svg)](https://doi.org/10.5281/zenodo.14795744)
 
 # MDify: Convert any document to Markdown  
 
@@ -72,3 +73,26 @@ Thank you!
 This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](LICENSE).
 
 You can find the full text of the license here: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
+
+
+## ❞ Citation
+If you use this project, please cite:
+
+```bibtex
+@software{stefanodangelo_2025_14795744,
+  author       = {stefanodangelo},
+  title        = {stefanodangelo/mdify: v0.1.7},
+  month        = feb,
+  year         = 2025,
+  publisher    = {Zenodo},
+  version      = {v0.1.7},
+  doi          = {10.5281/zenodo.14795744},
+  url          = {https://doi.org/10.5281/zenodo.14795744},
+  swhid        = {swh:1:dir:9cda7ac71f22db73007af0687eaeec23024edf65
+                   ;origin=https://doi.org/10.5281/zenodo.14795743;vi
+                   sit=swh:1:snp:28dd41fcecc69045174bd49791411d5d702b
+                   faca;anchor=swh:1:rel:b1b56d07814198e8f2038595c4e0
+                   6bf2973e6ee2;path=stefanodangelo-mdify-99b6caf
+                  },
+}
+```
