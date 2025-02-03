@@ -1,4 +1,4 @@
-from mdify.src.utils import (
+from src.utils import (
     CHART_DETECTION_MODEL_NAME, 
     CHART_DETECTION_MODEL_PATH, 
     CHART_DETECTION_N_CLASSES, 

@@ -1,4 +1,4 @@
-from mdify.src.utils import (
+from src.utils import (
     TABLE_OCR_CONFIG_PATH,
     TEXT_OCR_CONFIG_PATH,
     HEADER_OCR_CONFIG_PATH,
@@ -11,8 +11,8 @@ from mdify.src.utils import (
     SuppressOutput,
     open_image
 )
-from mdify.src.output import WriteMode, OutputArtifact
-from mdify.src.models import ChartDeplotModel, ImageCaptioningModel, FormulaExtractionModel
+from src.output import WriteMode, OutputArtifact
+from src.models import ChartDeplotModel, ImageCaptioningModel, FormulaExtractionModel
 
 from surya.model.detection.model import load_model as load_det_model, load_processor as load_det_processor
 from surya.model.recognition.model import load_model as load_rec_model
