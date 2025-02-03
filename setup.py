@@ -1,7 +1,7 @@
 from pathlib import Path
 import setuptools
 
-VERSION = "0.1.0"  # PEP-440
+VERSION = "0.1.1"  # PEP-440
 NAME = "mdify"
 INSTALL_REQUIRES = open('./requirements.txt', 'r').read().split('\n')
 AUTHOR = r"Stefano D'Angelo"
@@ -13,7 +13,8 @@ setuptools.setup(
     description="A powerful tool to extract text, tables, charts, and formulas from documents and convert them into Markdown format, ideal to improve LLM's accuracy and for versatile document processing.",
     url=URL,
     project_urls={
-        "Source Code": URL,
+        "GitHub Repository": URL,
+        "Documentation": "https://stefanodangelo.github.io/mdify/",
     },
     author=AUTHOR,
     license="CC BY-NC 4.0",
