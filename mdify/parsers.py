@@ -1,4 +1,4 @@
-from utils import (
+from mdify.utils import (
     clean_path, 
     get_filename, 
     digits_to_str, 
@@ -7,9 +7,9 @@ from utils import (
     IMAGES_SAVE_EXTENSION, 
     ARTIFACTS_DEFAULT_DIR
 )
-from layout import LayoutDetector
-from extractors import ContentExtractor
-from output import OutputWriter, OutputArtifact
+from mdify.layout import LayoutDetector
+from mdify.extractors import ContentExtractor
+from mdify.output import OutputWriter, OutputArtifact
 
 from typing import Optional
 from pypdfium2 import PdfDocument

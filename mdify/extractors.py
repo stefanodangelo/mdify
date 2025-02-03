@@ -1,4 +1,4 @@
-from ocr import TextRecognizer, TableRecognizer, PictureRecognizer
+from mdify.ocr import TextRecognizer, TableRecognizer, PictureRecognizer
 
 from typing import Optional
 

@@ -1,5 +1,5 @@
-from utils import LAYOUT_DETECTION_MODEL_PATH, LAYOUT_DETECTION_CONFIG_PATH, IMAGES_SAVE_EXTENSION, digits_to_str
-from models import PictureClassifier
+from mdify.utils import LAYOUT_DETECTION_MODEL_PATH, LAYOUT_DETECTION_CONFIG_PATH, IMAGES_SAVE_EXTENSION, digits_to_str
+from mdify.models import PictureClassifier
 
 from ultralytics import YOLO
 from glob import glob

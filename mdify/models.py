@@ -1,4 +1,4 @@
-from utils import (
+from mdify.utils import (
     CHART_DETECTION_MODEL_NAME, 
     CHART_DETECTION_MODEL_PATH, 
     CHART_DETECTION_N_CLASSES, 
@@ -11,7 +11,6 @@ from utils import (
     open_image
 )
 
-# from transformers import AutoImageProcessor, SwinForImageClassification, AutoConfig, TrOCRProcessor
 from transformers import *
 from optimum.onnxruntime import ORTModelForVision2Seq
 from torchvision import transforms
