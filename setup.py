@@ -1,7 +1,7 @@
 from pathlib import Path
 from setuptools import setup, find_packages
 
-VERSION = "0.1.0"  # PEP-440
+VERSION = "0.1.6"  # PEP-440
 NAME = "mdify"
 INSTALL_REQUIRES = open('./requirements.txt', 'r').read().split('\n')
 AUTHOR = r"Stefano D'Angelo"
@@ -32,6 +32,9 @@ setup(
     # Requirements
     install_requires=INSTALL_REQUIRES,
     packages=find_packages(include=["mdify", "mdify.*"]),
-    long_description=Path("README.md").read_text(),
-    long_description_content_type="text/markdown",
+    package_data={
+        "mdify": ["configs/*.yml"],
+    },
+    # long_description=Path("README.md").read_text(),
+    # long_description_content_type="text/markdown",
 )

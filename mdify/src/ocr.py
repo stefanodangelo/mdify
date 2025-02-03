@@ -1,7 +1,7 @@
 from mdify.src.utils import (
-    TABLE_OCR_CONFIG_PATH,
-    TEXT_OCR_CONFIG_PATH,
-    HEADER_OCR_CONFIG_PATH,
+    TABLE_OCR_CONFIG_FILE,
+    TEXT_OCR_CONFIG_FILE,
+    HEADER_OCR_CONFIG_FILE,
     IMAGES_SAVE_EXTENSION, 
     TABLES_SAVE_EXTENSION, 
     ARTIFACTS_DEFAULT_DIR, 
@@ -107,8 +107,8 @@ class TextRecognizer(OCR):
 
     def __init__(self):
         with SuppressOutput():
-            self.paragraph_model_config = yaml.safe_load(open(TEXT_OCR_CONFIG_PATH, 'r'))
-            self.header_reader = easyocr.Reader(**yaml.safe_load(open(HEADER_OCR_CONFIG_PATH, 'r')))
+            self.paragraph_model_config = yaml.safe_load(open(TEXT_OCR_CONFIG_FILE, 'r'))
+            self.header_reader = easyocr.Reader(**yaml.safe_load(open(HEADER_OCR_CONFIG_FILE, 'r')))
             self.det_processor, self.det_model, self.rec_model, self.rec_processor = load_det_processor(), load_det_model(), load_rec_model(), load_rec_processor()
             self.default_element_type = 'paragraph'
 
@@ -163,7 +163,7 @@ class TableRecognizer(OCR):
     """
 
     def __init__(self):
-        self.config = yaml.safe_load(open(TABLE_OCR_CONFIG_PATH, 'r'))
+        self.config = yaml.safe_load(open(TABLE_OCR_CONFIG_FILE, 'r'))
         self.model = PaddleOCR(**self.config, show_log=False)
 
     def ocr(self, img: np.ndarray, cls: bool = True, **kwargs):

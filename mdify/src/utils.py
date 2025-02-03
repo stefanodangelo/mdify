@@ -1,7 +1,10 @@
+from mdify import configs
+
 from huggingface_hub import snapshot_download
 from typing import Optional, Union
 from PIL import Image
 from io import BytesIO
+import importlib.resources
 import numpy as np
 import sys
 import os
@@ -20,10 +23,10 @@ PDF_EXTENSION = 'pdf'  # Default file extension for saving PDFs.
 # Model and Configuration Paths
 LAYOUT_DETECTION_MODEL_PATH = snapshot_download(repo_id='omoured/YOLOv10-Document-Layout-Analysis', allow_patterns='*l_best.pt')  # Path to the layout detection model.
 LAYOUT_DETECTION_MODEL_PATH = os.path.join(LAYOUT_DETECTION_MODEL_PATH, os.listdir(LAYOUT_DETECTION_MODEL_PATH)[0])
-LAYOUT_DETECTION_CONFIG_PATH = 'mdify/configs/layout_detection_config.yml'  # Path to the layout detection config file.
-TABLE_OCR_CONFIG_PATH = 'mdify/configs/paddle_ocr_config.yml'  # Path to the OCR configuration for tables.
-TEXT_OCR_CONFIG_PATH = 'mdify/configs/surya_ocr_config.yml'  # Path to the OCR configuration for text.
-HEADER_OCR_CONFIG_PATH = 'mdify/configs/easy_ocr_config.yml'  # Path to the OCR configuration for headers.
+LAYOUT_DETECTION_CONFIG_FILE = importlib.resources.files(configs) / 'layout_detection_config.yml' # Path to the layout detection config file.
+TABLE_OCR_CONFIG_FILE = importlib.resources.files(configs) / 'paddle_ocr_config.yml'  # Path to the OCR configuration for tables.
+TEXT_OCR_CONFIG_FILE = importlib.resources.files(configs) / 'surya_ocr_config.yml'  # Path to the OCR configuration for text.
+HEADER_OCR_CONFIG_FILE = importlib.resources.files(configs) / 'easy_ocr_config.yml'  # Path to the OCR configuration for headers.
 CHART_DETECTION_MODEL_PATH = snapshot_download(repo_id='stefanodangelo/chartdet', allow_patterns='*.pt')  # Path to the chart detection model.
 CHART_DETECTION_MODEL_PATH = os.path.join(CHART_DETECTION_MODEL_PATH, os.listdir(CHART_DETECTION_MODEL_PATH)[0])
 CHART_DETECTION_MODEL_NAME = 'microsoft/swin-large-patch4-window7-224'  # Model name for chart detection.
@@ -35,11 +38,11 @@ ARTIFACTS_DEFAULT_DIR = 'artifacts'  # Default directory for saving artifacts.
 # Chart VQA Model Configurations
 CHART_VQA_MODEL_NAME_CLASS = ('google/deplot', 'Pix2Struct')  # Model name and class for chart VQA.
 CHART_VQA_PROMPT = 'Generate the underlying data table of this figure.'  # Prompt for the chart VQA model.
-CHART_VQA_MODEL_CONFIG_PATH = 'mdify/configs/google_vqa_config.yml'  # Path to the chart VQA config file.
+CHART_VQA_MODEL_CONFIG_FILE = importlib.resources.files(configs) / 'google_vqa_config.yml'  # Path to the chart VQA config file.
 
 # Image VQA Model Configurations
 IMAGE_VQA_MODEL_NAME_CLASS = ('Salesforce/blip-image-captioning-large', 'Blip')  # Model name and class for image VQA.
-IMAGE_VQA_MODEL_CONFIG_PATH = 'mdify/configs/google_vqa_config.yml'  # Path to the image VQA config file.
+IMAGE_VQA_MODEL_CONFIG_FILE = CHART_VQA_MODEL_CONFIG_FILE  # Path to the image VQA config file.
 
 # Formula Extraction Model
 FORMULA_EXTRACTION_MODEL_NAME = 'breezedeus/pix2text-mfr'  # Model name for formula extraction.

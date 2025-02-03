@@ -4,9 +4,9 @@ from mdify.src.utils import (
     CHART_DETECTION_N_CLASSES, 
     CHART_VQA_MODEL_NAME_CLASS, 
     CHART_VQA_PROMPT, 
-    CHART_VQA_MODEL_CONFIG_PATH, 
+    CHART_VQA_MODEL_CONFIG_FILE, 
     IMAGE_VQA_MODEL_NAME_CLASS, 
-    IMAGE_VQA_MODEL_CONFIG_PATH,
+    IMAGE_VQA_MODEL_CONFIG_FILE,
     FORMULA_EXTRACTION_MODEL_NAME,
     open_image
 )
@@ -148,7 +148,7 @@ class ChartDeplotModel(HuggingFaceModel):
 
     def __init__(self):
         model, class_ = CHART_VQA_MODEL_NAME_CLASS
-        super().__init__(model, class_, CHART_VQA_MODEL_CONFIG_PATH)
+        super().__init__(model, class_, CHART_VQA_MODEL_CONFIG_FILE)
         self.placeholder = '<0x0A>'
         self.separator = '|'
         self.prompt = CHART_VQA_PROMPT
@@ -185,7 +185,7 @@ class ImageCaptioningModel(HuggingFaceModel):
 
     def __init__(self):
         model, class_ = IMAGE_VQA_MODEL_NAME_CLASS
-        super().__init__(model, class_, IMAGE_VQA_MODEL_CONFIG_PATH)
+        super().__init__(model, class_, IMAGE_VQA_MODEL_CONFIG_FILE)
 
     def _postprocess(self, text: str | Iterable[str]):
         """

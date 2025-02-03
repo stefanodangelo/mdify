@@ -78,7 +78,8 @@ class DocumentParser:
             **kwargs: Additional arguments passed to the content extraction methods.
         """
         rendering_kwarg_keys = ['scale']
-        rendering_kwargs = {key: kwargs[key] for key in rendering_kwarg_keys if key in kwargs}
+        rendering_kwarg_keys = [key for key in rendering_kwarg_keys if key in kwargs]
+        rendering_kwargs = {key: kwargs[key] for key in rendering_kwarg_keys}
         [kwargs.pop(k) for k in rendering_kwarg_keys]
 
         self.document_path = clean_path(document_path)

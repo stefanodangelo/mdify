@@ -1,4 +1,4 @@
-from mdify.src.utils import LAYOUT_DETECTION_MODEL_PATH, LAYOUT_DETECTION_CONFIG_PATH, IMAGES_SAVE_EXTENSION, digits_to_str
+from mdify.src.utils import LAYOUT_DETECTION_MODEL_PATH, LAYOUT_DETECTION_CONFIG_FILE, IMAGES_SAVE_EXTENSION, digits_to_str
 from mdify.src.models import PictureClassifier
 
 from ultralytics import YOLO
@@ -24,8 +24,9 @@ class LayoutDetector:
     """
 
     def __init__(self):
+
         self.model = YOLO(LAYOUT_DETECTION_MODEL_PATH)
-        self.config = yaml.safe_load(open(LAYOUT_DETECTION_CONFIG_PATH, 'r'))
+        self.config = yaml.safe_load(LAYOUT_DETECTION_CONFIG_FILE.open('r'))
         self.filename_separator = '_'
         self.picture_classifier = PictureClassifier()
     
