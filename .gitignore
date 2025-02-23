@@ -1,6 +1,6 @@
 *.pt
 processed/
-venv/
+*venv/
 __pycache__
 .vscode
 scratch/
@@ -13,5 +13,4 @@ build/
 dist/
 README_dev.md
 
-!requirements.txt
-!requirements-docs.txt
+!requirements*.txt
