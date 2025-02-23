@@ -11,6 +11,7 @@ pdfs/
 *.egg-info/
 build/
 dist/
+README_dev.md
 
 !requirements.txt
 !requirements-docs.txt

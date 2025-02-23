@@ -34,7 +34,14 @@ parser.parse('PATH_TO_YOUR_DOCUMENT')
 
 Or parse multiple documents from one folder at once simply by changing the last line to:
 ```python
-parser.parse_multiple('PATH_TO_YOUR_FOLDER')
+parser.parse_directory('PATH_TO_YOUR_FOLDER')
+```
+
+Alternatively, you can also pass the document in bytes to the `parse()` method, but in this case you must also provide the document name and type manually:
+```python
+with open('PATH_TO_YOUR_DOCUMENT', 'rb') as f:
+  document_bytes = f.read()
+parser.parse(document_bytes, document_name='YOUR_DOCUMENT_NAME', document_type='pdf')
 ```
 
 You can then choose the outputs to save using `DocumentParser(save_artifacts=...)`, or you can set the write mode to embedded, placeholder or described by passing the `write_mode` parameter to the `parse()` function.

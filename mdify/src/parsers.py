@@ -11,9 +11,10 @@ from mdify.src.layout import LayoutDetector
 from mdify.src.extractors import ContentExtractor
 from mdify.src.output import OutputWriter, OutputArtifact
 
-from typing import Optional
+from typing import Optional, Union
 from pypdfium2 import PdfDocument
 import os
+import io
 import json
 import shutil
 import logging
@@ -34,8 +35,8 @@ class DocumentParser:
         extractor (ContentExtractor): Content extraction object.
     
     Methods:
-        parse_multiple(documents_dir: str, **kwargs): Parses multiple documents from a directory.
-        parse(document_path: str, **kwargs): Parses a single document and processes it.
+        parse_directory(documents_dir: str, **kwargs): Parses multiple documents from a directory.
+        parse(self, document: Union[str, bytes], document_name: str = None, document_type: str = None, **kwargs): Parses a single document and processes it.
     """
 
     def __init__(
@@ -58,7 +59,7 @@ class DocumentParser:
         self.detector = LayoutDetector()
         self.extractor = ContentExtractor() 
 
-    def parse_multiple(self, documents_dir: str, **kwargs):
+    def parse_directory(self, documents_dir: str, **kwargs):
         """
         Parses multiple documents from a given directory.
 
@@ -69,21 +70,36 @@ class DocumentParser:
         for document in os.listdir(documents_dir):
             self.parse(os.path.join(documents_dir, document), **kwargs)
 
-    def parse(self, document_path: str, **kwargs):    
+    def parse(self, document: Union[str, bytes], document_name: str = None, document_type: str = None, **kwargs):
         """
-        Parses a single document, processes its pages, extracts content, and saves the output.
+        Converts a document into Markdown.
 
         Args:
-            document_path (str): Path to the document to be parsed.
-            **kwargs: Additional arguments passed to the content extraction methods.
-        """
-        rendering_kwarg_keys = ['scale']
-        rendering_kwarg_keys = [key for key in rendering_kwarg_keys if key in kwargs]
-        rendering_kwargs = {key: kwargs[key] for key in rendering_kwarg_keys}
-        [kwargs.pop(k) for k in rendering_kwarg_keys]
+            document (Union[str, bytes]): Document to be parsed. If a string, it is the path to the document.
+                                          If bytes, document_type and document_name must be specified.
+            document_name (str, optional): Name of document if document is an instance of bytes. Defaults to None.
+            document_type (str, optional): Type of document if document is an instance of bytes. Defaults to None.
+            **kwargs: Additional keyword arguments passed to the rendering function and the extractor for each element.
 
-        self.document_path = clean_path(document_path)
-        self.document_name = get_filename(document_path)
+        Raises:
+            ValueError: If document_name and document_type are not provided when parsing bytes.
+        """
+
+        # Define document attributes
+        if isinstance(document, str):
+            self.document = clean_path(document)
+            self.document_name = get_filename(document)
+            self.doc_format = get_file_extension(self.document)
+        elif isinstance(document, bytes):
+            if document_name is None or document_type is None:
+                raise ValueError("document_name and document_type must be provided when parsing bytes.")
+            self.document = document
+            self.document_name = get_filename(document_name)
+            self.doc_format = document_type
+        
+        if self.doc_format in self.PIL_supported_formats:
+            self.doc_format = 'image'
+
         self.base_output_folder = os.path.join(self.save_folder, self.document_name)
         self.pages_save_dir = os.path.join(self.base_output_folder, 'pages')
         self.layout_save_dir = os.path.join(self.base_output_folder, 'layout')
@@ -94,21 +110,26 @@ class DocumentParser:
         os.makedirs(self.layout_save_dir, exist_ok=True)
         os.makedirs(self.artifacts_save_dir, exist_ok=True)
 
-        doc_format = get_file_extension(self.document_path)
-        if doc_format in self.PIL_supported_formats:
-            doc_format = 'image'
+        # Define rendering kwargs
+        rendering_kwarg_keys = ['scale']
+        rendering_kwarg_keys = [key for key in rendering_kwarg_keys if key in kwargs]
+        rendering_kwargs = {key: kwargs[key] for key in rendering_kwarg_keys}
+        [kwargs.pop(k) for k in rendering_kwarg_keys]
 
+        # Process document        
         try:
-            eval(f"self._process_{doc_format}(**rendering_kwargs)")
+            eval(f"self._process_{self.doc_format}(**rendering_kwargs)")
         except Exception as e:
-            print(e)
-            logging.error(f'Format `{doc_format}` is not supported.')
+            logging.debug(e)
+            logging.error(f'Format `{self.doc_format}` is not supported.')
 
+        # Run OCR
         for image in os.listdir(self.pages_save_dir):
             page_nr = digits_to_str(get_filename(image))
             output_dir = os.path.join(self.layout_save_dir, page_nr)
             self.detector.detect(os.path.join(self.pages_save_dir, image), output_dir=output_dir, page_nr=page_nr)
         
+        # Extract content
         texts = []
         for page in os.listdir(self.layout_save_dir):
             for image in os.listdir(os.path.join(self.layout_save_dir, page)):
@@ -134,16 +155,18 @@ class DocumentParser:
 
                 texts.append(result)
 
+        # Write output
         OutputWriter.write(
             '\n\n'.join(texts),
             save_dir = self.base_output_folder,
             filename = self.document_name
         )
         
+        # Clean up
         if not self.debug:
             shutil.rmtree(self.layout_save_dir)
             shutil.rmtree(self.pages_save_dir)
-
+        
     def _process_image(self, **kwargs):
         """
         Saves the image in the appropriate folder.
@@ -152,7 +175,7 @@ class DocumentParser:
             **kwargs: Additional arguments. Currently not used.
         """
         page_nr = os.listdir(self.pages_save_dir)
-        open_image(self.document_path).save(os.path.join(self.pages_save_dir, f'{page_nr+1}.{IMAGES_SAVE_EXTENSION}'))
+        open_image(self.document).save(os.path.join(self.pages_save_dir, f'{page_nr+1}.{IMAGES_SAVE_EXTENSION}'))
 
     def _process_pdf(self, **kwargs):
         """
@@ -161,7 +184,8 @@ class DocumentParser:
         Args:
             **kwargs: Additional arguments passed to the rendering function.
         """
-        pdf = PdfDocument(self.document_path)
+        document = self.document if isinstance(self.document, str) else io.BytesIO(self.document) 
+        pdf = PdfDocument(document)
     
         if self.extract_metadata:
             json.dump(pdf.get_metadata_dict(), open(self.metadata_save_path, 'w'))
