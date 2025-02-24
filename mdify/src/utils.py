@@ -18,7 +18,7 @@ Global constants used throughout the script for configuring paths, file extensio
 FOLDERS_SEPARATOR = '/'  # Defines the folder separator for paths.
 IMAGES_SAVE_EXTENSION = 'jpg'  # Default file extension for saving images.
 TABLES_SAVE_EXTENSION = 'csv'  # Default file extension for saving tables.
-PDF_EXTENSION = 'pdf'  # Default file extension for saving PDFs.
+DOCUMENTS_SAVE_EXTENSION = 'md'  # Default file extension for saving documents.
 
 # Model and Configuration Paths
 LAYOUT_DETECTION_MODEL_PATH = snapshot_download(repo_id='omoured/YOLOv10-Document-Layout-Analysis', allow_patterns='*l_best.pt')  # Path to the layout detection model.

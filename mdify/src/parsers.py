@@ -5,7 +5,8 @@ from mdify.src.utils import (
     get_file_extension, 
     open_image,
     IMAGES_SAVE_EXTENSION, 
-    ARTIFACTS_DEFAULT_DIR
+    DOCUMENTS_SAVE_EXTENSION,
+    ARTIFACTS_DEFAULT_DIR,
 )
 from mdify.src.layout import LayoutDetector
 from mdify.src.extractors import ContentExtractor
@@ -13,6 +14,7 @@ from mdify.src.output import OutputWriter, OutputArtifact
 
 from typing import Optional, Union
 from pypdfium2 import PdfDocument
+from glob import glob
 import os
 import io
 import json
@@ -166,6 +168,12 @@ class DocumentParser:
         if not self.debug:
             shutil.rmtree(self.layout_save_dir)
             shutil.rmtree(self.pages_save_dir)
+
+    def cleanup(self):
+        """
+        Deletes the directory where processed documents and artifacts are stored and all its contents.
+        """
+        shutil.rmtree(self.save_folder)
         
     def _process_image(self, **kwargs):
         """
@@ -194,3 +202,48 @@ class DocumentParser:
             bitmap = page.render(**kwargs)
             pil_image = bitmap.to_pil()
             pil_image.save(os.path.join(self.pages_save_dir, f'{i+1}.{IMAGES_SAVE_EXTENSION}'))
+
+    @property
+    def output_files_paths(self):
+        """
+        Returns:
+            list: List of file paths to the files generated for each processed document.
+        """
+        if os.path.exists(self.save_folder):
+            return glob(os.path.join(self.save_folder, f"**/*.{DOCUMENTS_SAVE_EXTENSION}"), recursive=True)
+    
+    @property
+    def output_files(self):
+        """       
+        Returns:
+            dict: A dictionary with the paths to the output files as keys and the corresponding file objects as values.
+        """
+        out_files = self.output_files_paths
+        if out_files:
+            files_content = [open(f, "r", encoding="utf-8").read() for f in out_files]
+            return dict(zip(out_files, files_content))
+    
+    @property
+    def metadata_paths(self):
+        """
+        Returns:
+            dict: A dictionary with the paths to the output files as keys and the paths to the metadata files as values.
+        """
+        if os.path.exists(self.save_folder):
+            return dict(zip(
+                self.output_files_paths, 
+                glob(os.path.join(self.save_folder, f"**/metadata.json"), recursive=True)
+            ))
+
+    @property
+    def metadata(self):
+        """
+        Returns:
+            dict: A dictionary where the keys are the paths to the output files and the values are the metadata objects associated with each document.
+        """
+        metadata_dict = self.metadata_paths
+        if metadata_dict:
+            return dict(zip(
+                metadata_dict.keys(), 
+                [json.load(open(metadata, 'r')) for metadata in metadata_dict.values()]
+            ))
