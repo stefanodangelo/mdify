@@ -46,15 +46,22 @@ parser.parse(document_bytes, document_name='YOUR_DOCUMENT_NAME', document_type='
 
 You can then choose the outputs to save using `DocumentParser(save_artifacts=...)`, or you can set the write mode to embedded, placeholder or described by passing the `write_mode` parameter to the `parse()` function.
 
+**NB**: To make the best use of this library and extract meaning from images, use the following code:
+```python
+from mdify import WriteMode
+
+parser.parse('PATH_TO_YOUR_DOCUMENT', write_mode=WriteMode.DESCRIBED)
+```
+
 
 ## 🔹 Key Features  
-✔️ **Handles complex layouts** - Extracts text, tables, and visual elements with precision
-🖼️ **Preserves images & charts** - Gives the option to save and reuse extracted visuals for Computer Vision tasks
-🎯 **Optimized for accuracy** - Combines layout detection and OCR to extract text from documents
-🤖 **Preprocessing for LLM applications** - Converts documents to Markdown, which is popular for LLM training and fine-tuning tasks
-🛠️ **Debug mode** - Save intermediate document elements as images for analysis
+- ✔️ **Handles complex layouts** - Extracts text, tables, and visual elements with precision
+- 🖼️ **Preserves images & charts** - Gives the option to save and reuse extracted visuals for Computer Vision tasks
+- 🎯 **Optimized for accuracy** - Combines layout detection and OCR to extract text from documents
+- 🤖 **Preprocessing for LLM applications** - Converts documents to Markdown, which is popular for LLM training and fine-tuning tasks
+- 🛠️ **Debug mode** - Save intermediate document elements as images for analysis
 
-**Notes**:
+**NB**:
 - The first run will take ~2 minutes to download the necessary models.
 - Diagrams are not supported yet, therefore if you use the `DESCRIBED` write mode they may be analyzed incorrectly.
 
