@@ -1,0 +1,3008 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Reference - MDify</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="..">MDify</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../usage/" class="nav-link">Usage</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../usage/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#reference" class="nav-link">Reference</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#mdify.src.parsers" class="nav-link">parsers</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.parsers.DocumentParser" class="nav-link">DocumentParser</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.parsers.DocumentParser.metadata" class="nav-link">metadata</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.parsers.DocumentParser.metadata_paths" class="nav-link">metadata_paths</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.parsers.DocumentParser.output_files" class="nav-link">output_files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.parsers.DocumentParser.output_files_paths" class="nav-link">output_files_paths</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.parsers.DocumentParser.cleanup" class="nav-link">cleanup</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.parsers.DocumentParser.parse" class="nav-link">parse</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.parsers.DocumentParser.parse_directory" class="nav-link">parse_directory</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#mdify.src.layout" class="nav-link">layout</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.layout.LayoutDetector" class="nav-link">LayoutDetector</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.layout.LayoutDetector.__custom_sort" class="nav-link">__custom_sort</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.layout.LayoutDetector.__get_num_of_columns" class="nav-link">__get_num_of_columns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.layout.LayoutDetector.detect" class="nav-link">detect</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.layout.LayoutDetector.render" class="nav-link">render</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#mdify.src.models" class="nav-link">models</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.models.ChartDeplotModel" class="nav-link">ChartDeplotModel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.models.FormulaExtractionModel" class="nav-link">FormulaExtractionModel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.models.HuggingFaceModel" class="nav-link">HuggingFaceModel</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.models.HuggingFaceModel.predict" class="nav-link">predict</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.models.ImageCaptioningModel" class="nav-link">ImageCaptioningModel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.models.PictureClassifier" class="nav-link">PictureClassifier</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.models.PictureClassifier.classify" class="nav-link">classify</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#mdify.src.ocr" class="nav-link">ocr</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.ocr.OCR" class="nav-link">OCR</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.OCR.process" class="nav-link">process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.OCR.process_results" class="nav-link">process_results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.ocr.PictureRecognizer" class="nav-link">PictureRecognizer</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.PictureRecognizer.__make_save_path" class="nav-link">__make_save_path</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.PictureRecognizer.__save_image" class="nav-link">__save_image</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.PictureRecognizer.process_results" class="nav-link">process_results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.ocr.TableRecognizer" class="nav-link">TableRecognizer</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.TableRecognizer.__find_column_boundaries" class="nav-link">__find_column_boundaries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.TableRecognizer.__find_header" class="nav-link">__find_header</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.TableRecognizer.ocr" class="nav-link">ocr</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.TableRecognizer.process_results" class="nav-link">process_results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.TableRecognizer.render" class="nav-link">render</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.ocr.TextRecognizer" class="nav-link">TextRecognizer</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.ocr.TextRecognizer.process_results" class="nav-link">process_results</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#mdify.src.output" class="nav-link">output</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.output.OutputArtifact" class="nav-link">OutputArtifact</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.output.OutputWriter" class="nav-link">OutputWriter</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.output.OutputWriter.write" class="nav-link">write</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.output.WriteMode" class="nav-link">WriteMode</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#mdify.src.extractors" class="nav-link">extractors</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.extractors.ContentExtractor" class="nav-link">ContentExtractor</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="5"><a href="#mdify.src.extractors.ContentExtractor.extract" class="nav-link">extract</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#mdify.src.utils" class="nav-link">utils</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.utils.convert_image_to_pdf" class="nav-link">convert_image_to_pdf</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.utils.convert_to_jpeg" class="nav-link">convert_to_jpeg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.utils.get_filename" class="nav-link">get_filename</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="4"><a href="#mdify.src.utils.open_image" class="nav-link">open_image</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="reference">Reference</h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="mdify.src.parsers" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>mdify.src.parsers</code>
+
+
+</h3>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.parsers.DocumentParser" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>DocumentParser</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>A class that processes documents (PDFs or images) to extract their content and save artifacts like images, tables, charts, and formulas.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.parsers.DocumentParser.save_folder">save_folder</span></code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Folder where the processed documents will be saved.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.parsers.DocumentParser.extract_metadata">extract_metadata</span></code></b>
+              (<code><span title="bool">bool</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Flag to indicate if metadata should be extracted.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.parsers.DocumentParser.metadata_filename">metadata_filename</span></code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>The filename for saving metadata.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.parsers.DocumentParser.save_artifacts">save_artifacts</span></code></b>
+              (<code><a class="autorefs autorefs-internal" title="OutputArtifact (mdify.src.output.OutputArtifact)" href="#mdify.src.output.OutputArtifact">OutputArtifact</a></code>)
+          –
+          <div class="doc-md-description">
+            <p>Specifies the types of artifacts to save.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.parsers.DocumentParser.debug">debug</span></code></b>
+              (<code><span title="bool">bool</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Flag to control debug mode. If <code>True</code>, it will keep temporary folders containing all pages and all elements extracted in each page in image format. </p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.parsers.DocumentParser.PIL_supported_formats">PIL_supported_formats</span></code></b>
+              (<code><span title="list">list</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>List of supported image formats by PIL.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.parsers.DocumentParser.detector">detector</span></code></b>
+              (<code><a class="autorefs autorefs-internal" title="LayoutDetector (mdify.src.layout.LayoutDetector)" href="#mdify.src.layout.LayoutDetector">LayoutDetector</a></code>)
+          –
+          <div class="doc-md-description">
+            <p>Layout detection object.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.parsers.DocumentParser.extractor">extractor</span></code></b>
+              (<code><a class="autorefs autorefs-internal" title="ContentExtractor (mdify.src.extractors.ContentExtractor)" href="#mdify.src.extractors.ContentExtractor">ContentExtractor</a></code>)
+          –
+          <div class="doc-md-description">
+            <p>Content extraction object.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <ul>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="parse_directory (mdify.src.parsers.DocumentParser.parse_directory)" href="#mdify.src.parsers.DocumentParser.parse_directory">parse_directory</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>str, **kwargs): Parses multiple documents from a directory.</p>
+            </div>
+          </li>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="parse (mdify.src.parsers.DocumentParser.parse)" href="#mdify.src.parsers.DocumentParser.parse">parse</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>Union[str, bytes], document_name: str = None, document_type: str = None, **kwargs): Parses a single document and processes it.</p>
+            </div>
+          </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="mdify.src.parsers.DocumentParser.metadata" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python">metadata</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>dict</code></b>          –
+          <div class="doc-md-description">
+            <p>A dictionary where the keys are the paths to the output files and the values are the metadata objects associated with each document.</p>
+          </div>
+        </li>
+    </ul>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="mdify.src.parsers.DocumentParser.metadata_paths" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python">metadata_paths</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>dict</code></b>          –
+          <div class="doc-md-description">
+            <p>A dictionary with the paths to the output files as keys and the paths to the metadata files as values.</p>
+          </div>
+        </li>
+    </ul>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="mdify.src.parsers.DocumentParser.output_files" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python">output_files</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>dict</code></b>          –
+          <div class="doc-md-description">
+            <p>A dictionary with the paths to the output files as keys and the corresponding file objects as values.</p>
+          </div>
+        </li>
+    </ul>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h5 id="mdify.src.parsers.DocumentParser.output_files_paths" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python">output_files_paths</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>list</code></b>          –
+          <div class="doc-md-description">
+            <p>List of file paths to the files generated for each processed document.</p>
+          </div>
+        </li>
+    </ul>
+    </div>
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.parsers.DocumentParser.cleanup" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">cleanup()</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Deletes the directory where processed documents and artifacts are stored and all its contents.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.parsers.DocumentParser.parse" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">parse(document, document_name=None, document_type=None, **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Converts a document into Markdown.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>document</code></b>
+              (<code><span title="typing.Union">Union</span>[<span title="str">str</span>, <span title="bytes">bytes</span>]</code>)
+          –
+          <div class="doc-md-description">
+            <p>Document to be parsed. If a string, it is the path to the document.
+                          If bytes, document_type and document_name must be specified.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>document_name</code></b>
+              (<code><span title="str">str</span></code>, default:
+                  <code>None</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Name of document if document is an instance of bytes. Defaults to None.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>document_type</code></b>
+              (<code><span title="str">str</span></code>, default:
+                  <code>None</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Type of document if document is an instance of bytes. Defaults to None.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional keyword arguments passed to the rendering function and the extractor for each element.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+              <code><span title="ValueError">ValueError</span></code>
+            –
+          <div class="doc-md-description">
+            <p>If document_name and document_type are not provided when parsing bytes.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.parsers.DocumentParser.parse_directory" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">parse_directory(documents_dir, **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Parses multiple documents from a given directory.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>documents_dir</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Directory containing documents to be parsed.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional arguments passed to the parse method.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="mdify.src.layout" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>mdify.src.layout</code>
+
+
+</h3>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.layout.LayoutDetector" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>LayoutDetector</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Detects and organizes layout elements from a document page using a pre-trained YOLO model.
+This class is designed to process pages containing elements such as titles, headers, footnotes, and pictures, 
+allowing for efficient extraction, sorting, and saving of these components.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.layout.LayoutDetector.model">model</span></code></b>
+          –
+          <div class="doc-md-description">
+            <p>Pre-trained YOLO model for layout detection.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.layout.LayoutDetector.config">config</span></code></b>
+              (<code><span title="dict">dict</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Configuration settings for the layout detection model.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.layout.LayoutDetector.filename_separator">filename_separator</span></code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Separator used for naming cropped element files.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.layout.LayoutDetector.picture_classifier">picture_classifier</span></code></b>
+              (<code><a class="autorefs autorefs-internal" title="PictureClassifier (mdify.src.models.PictureClassifier)" href="#mdify.src.models.PictureClassifier">PictureClassifier</a></code>)
+          –
+          <div class="doc-md-description">
+            <p>Classifier for recognizing picture types in the layout.</p>
+          </div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.layout.LayoutDetector.__custom_sort" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">__custom_sort(elem)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Sorts layout elements based on their vertical and horizontal positions on the page.
+Elements are ordered first from top-to-bottom (y1) and then from left-to-right (x1).</p>
+<p>To support multicolumn formats, elements on the x-axis are assigned a higher weight the more they are on the right of the page.
+This way, elements at the bottom of the page can still be correctly positioned.</p>
+<p>Each element is also given a priority based on the type of element it is (e.g. footnotes must go at the bottom, headers at the top).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>elem</code></b>
+              (<code><span title="tuple">tuple</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>A tuple containing a bounding box, label, and other metadata.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>tuple</code></b>          –
+          <div class="doc-md-description">
+            <p>Sorting key based on element type priority and position.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.layout.LayoutDetector.__get_num_of_columns" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">__get_num_of_columns(x_positions, page_width, num_bins=10, density_threshold=0.5)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Estimates the number of columns in a document page based on the density of x-coordinates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>x_positions</code></b>
+              (<code><span title="typing.Iterable">Iterable</span>[<span title="float">float</span>]</code>)
+          –
+          <div class="doc-md-description">
+            <p>X-coordinates of detected bounding boxes.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>page_width</code></b>
+              (<code><span title="float">float</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Width of the page in pixels.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>num_bins</code></b>
+              (<code><span title="typing.Optional">Optional</span>[<span title="int">int</span>]</code>, default:
+                  <code>10</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Number of bins for dividing the page width. Default is 10.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>density_threshold</code></b>
+              (<code><span title="typing.Optional">Optional</span>[<span title="float">float</span>]</code>, default:
+                  <code>0.5</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Threshold for determining high-density regions. Default is 0.5.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>int</code></b> (              <code><span title="int">int</span></code>
+)          –
+          <div class="doc-md-description">
+            <p>Number of columns detected in the page.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.layout.LayoutDetector.detect" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">detect(image_path, page_nr, output_dir='', **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Detects and extracts layout elements from a document page image.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>image_path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to the input image of the document page.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>page_nr</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Page number used for naming output files.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>output_dir</code></b>
+              (<code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>, default:
+                  <code>&#39;&#39;</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Directory where extracted elements will be saved. Default is an empty string.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional parameters for the YOLO model.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>List</code></b>          –
+          <div class="doc-md-description">
+            <p>A list of detected layout elements if <code>output_dir</code> is not provided. Otherwise, saves elements to the specified directory.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.layout.LayoutDetector.render" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">render(image_path, output_dir, **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Renders annotated layout elements on the input document page image.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>image_path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to the input image of the document page.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>output_dir</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Directory where the annotated image will be saved.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional parameters for the detection process.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<details class="saves" open>
+  <summary>Saves</summary>
+  <p>Annotated image with bounding boxes and labels drawn over the original image.</p>
+</details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="mdify.src.models" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>mdify.src.models</code>
+
+
+</h3>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.models.ChartDeplotModel" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>ChartDeplotModel</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="HuggingFaceModel (mdify.src.models.HuggingFaceModel)" href="#mdify.src.models.HuggingFaceModel">HuggingFaceModel</a></code></p>
+
+
+        <p>Specialized Hugging Face model for extracting data from charts.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.ChartDeplotModel.placeholder">placeholder</span></code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Placeholder token used in the model's output.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.ChartDeplotModel.separator">separator</span></code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Separator used in the model's output.</p>
+          </div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.models.FormulaExtractionModel" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>FormulaExtractionModel</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="HuggingFaceModel (mdify.src.models.HuggingFaceModel)" href="#mdify.src.models.HuggingFaceModel">HuggingFaceModel</a></code></p>
+
+
+        <p>Specialized model for extracting mathematical formulas from images.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.models.HuggingFaceModel" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>HuggingFaceModel</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>A generic wrapper for Hugging Face models that supports text and vision-based predictions.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.HuggingFaceModel.processor">processor</span></code></b>
+          –
+          <div class="doc-md-description">
+            <p>Preprocessor for the specific Hugging Face model.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.HuggingFaceModel.model">model</span></code></b>
+          –
+          <div class="doc-md-description">
+            <p>Pretrained Hugging Face model for predictions.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.HuggingFaceModel.config">config</span></code></b>
+              (<code><span title="dict">dict</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Additional configurations for model generation.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.HuggingFaceModel.prompt">prompt</span></code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Text prompt to be used during prediction (if applicable).</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.HuggingFaceModel.use_pixel_values">use_pixel_values</span></code></b>
+              (<code><span title="bool">bool</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Whether to use pixel values instead of text tokens.</p>
+          </div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.models.HuggingFaceModel.predict" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">predict(image_path)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Generates a prediction for the input image using the Hugging Face model.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>image_path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to the input image.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          –
+          <div class="doc-md-description">
+            <p>The processed output from the model's predictions.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.models.ImageCaptioningModel" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>ImageCaptioningModel</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="HuggingFaceModel (mdify.src.models.HuggingFaceModel)" href="#mdify.src.models.HuggingFaceModel">HuggingFaceModel</a></code></p>
+
+
+        <p>Hugging Face model for generating captions for images.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.models.PictureClassifier" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>PictureClassifier</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Classifies images into categories such as "Picture" or "Chart" using a pretrained Swin Transformer model.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.PictureClassifier.model">model</span></code></b>
+              (<code><span title="SwinForImageClassification">SwinForImageClassification</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Pretrained Swin model for image classification.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.PictureClassifier.device">device</span></code></b>
+              (<code><span title="torch.device">device</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Device to perform computations, either CPU or GPU.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.PictureClassifier.transform">transform</span></code></b>
+              (<code><span title="torchvision.transforms.Compose">Compose</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Preprocessing transformations for input images.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.models.PictureClassifier.id2class">id2class</span></code></b>
+              (<code><span title="dict">dict</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Mapping of class indices to class names.</p>
+          </div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.models.PictureClassifier.classify" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">classify(image)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Classifies an input image into predefined categories, using GPU if available.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>image</code></b>
+              (<code><span title="str">str</span> | <span title="numpy.ndarray">ndarray</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to the image or an image in the form of a NumPy array.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>int</code></b> (              <code><span title="int">int</span></code>
+)          –
+          <div class="doc-md-description">
+            <p>Predicted class index of the image.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="mdify.src.ocr" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>mdify.src.ocr</code>
+
+
+</h3>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.ocr.OCR" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>OCR</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Abstract base class for OCR processing. It provides a common interface and workflow 
+for derived OCR classes.</p>
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <ul>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="process (mdify.src.ocr.OCR.process)" href="#mdify.src.ocr.OCR.process">process</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>Main method to process an image and perform OCR.</p>
+            </div>
+          </li>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="process_results (mdify.src.ocr.OCR.process_results)" href="#mdify.src.ocr.OCR.process_results">process_results</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>Abstract method to be implemented by subclasses for processing OCR results.</p>
+            </div>
+          </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.OCR.process" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">process(image_path, save_dir, filename, save_artifacts=OutputArtifact.NONE, write_mode=WriteMode.EMBEDDED, debug=False, **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Processes the image and initializes OCR attributes.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>image_path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to the input image.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>save_dir</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Directory to save OCR artifacts.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>filename</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Base filename for saving artifacts.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>save_artifacts</code></b>
+              (<code><span title="typing.Optional">Optional</span>[<a class="autorefs autorefs-internal" title="OutputArtifact (mdify.src.output.OutputArtifact)" href="#mdify.src.output.OutputArtifact">OutputArtifact</a>]</code>, default:
+                  <code><span title="mdify.src.output.OutputArtifact.NONE">NONE</span></code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Specifies which artifacts to save.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>write_mode</code></b>
+              (<code><span title="typing.Optional">Optional</span>[<a class="autorefs autorefs-internal" title="WriteMode (mdify.src.output.WriteMode)" href="#mdify.src.output.WriteMode">WriteMode</a>]</code>, default:
+                  <code><span title="mdify.src.output.WriteMode.EMBEDDED">EMBEDDED</span></code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Determines the output format of extracted text.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>debug</code></b>
+              (<code><span title="typing.Optional">Optional</span>[<span title="bool">bool</span>]</code>, default:
+                  <code>False</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>If True, saves a debug image.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional arguments for customization.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+              <code><span title="Exception">Exception</span></code>
+            –
+          <div class="doc-md-description">
+            <p>If the image cannot be processed.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.OCR.process_results" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">process_results(**kwargs)</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Abstract method to process OCR results. Subclasses must implement this method.</p>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.ocr.PictureRecognizer" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>PictureRecognizer</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="OCR (mdify.src.ocr.OCR)" href="#mdify.src.ocr.OCR">OCR</a></code></p>
+
+
+        <p>Class for recognizing and processing image-based data such as charts, captions, or formulas.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.PictureRecognizer.chart_qa_model">chart_qa_model</span></code></b>
+          –
+          <div class="doc-md-description">
+            <p>Model for extracting data from charts.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.PictureRecognizer.captioning_model">captioning_model</span></code></b>
+          –
+          <div class="doc-md-description">
+            <p>Model for generating captions for images.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.PictureRecognizer.formula_extraction_model">formula_extraction_model</span></code></b>
+          –
+          <div class="doc-md-description">
+            <p>Model for extracting mathematical formulas.</p>
+          </div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.PictureRecognizer.__make_save_path" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">__make_save_path(extension=IMAGES_SAVE_EXTENSION, **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Creates the save path for the image artifact.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.PictureRecognizer.__save_image" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">__save_image(**kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Saves the processed image.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.PictureRecognizer.process_results" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">process_results(**kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Processes the image results based on its type (chart, formula, or general image).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>save_dir</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Directory to save OCR artifacts.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.ocr.TableRecognizer" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>TableRecognizer</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="OCR (mdify.src.ocr.OCR)" href="#mdify.src.ocr.OCR">OCR</a></code></p>
+
+
+        <p>Class for recognizing and organizing table data from images.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.TableRecognizer.config">config</span></code></b>
+              (<code><span title="dict">dict</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Configuration for table OCR model.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.TableRecognizer.model">model</span></code></b>
+              (<code><span title="paddleocr.PaddleOCR">PaddleOCR</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Instance of PaddleOCR model.</p>
+          </div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.TableRecognizer.__find_column_boundaries" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">__find_column_boundaries(bboxes, tolerance=10)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Finds boundaries of table columns based on bounding boxes.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>bboxes</code></b>
+              (<code><span title="typing.Iterable">Iterable</span>[<span title="typing.Iterable">Iterable</span>[<span title="float">float</span>]]</code>)
+          –
+          <div class="doc-md-description">
+            <p>List of bounding boxes.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>tolerance</code></b>
+              (<code><span title="int">int</span></code>, default:
+                  <code>10</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Margin of error in pixels for boundary grouping.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+              <code><span title="typing.Iterable">Iterable</span>[<span title="float">float</span>]</code>
+          –
+          <div class="doc-md-description">
+            <p>Iterable[float]: Sorted list of column boundaries.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.TableRecognizer.__find_header" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">__find_header(column_boundaries, bboxes, tolerance=10)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Identifies the row index where the table header ends.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>column_boundaries</code></b>
+              (<code><span title="typing.Iterable">Iterable</span>[<span title="float">float</span>]</code>)
+          –
+          <div class="doc-md-description">
+            <p>List of column boundaries.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>bboxes</code></b>
+              (<code><span title="numpy.ndarray">ndarray</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Array of bounding boxes.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>tolerance</code></b>
+              (<code><span title="int">int</span></code>, default:
+                  <code>10</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Margin of error in pixels for header detection.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>int</code></b> (              <code><span title="int">int</span></code>
+)          –
+          <div class="doc-md-description">
+            <p>Row index where the header ends.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.TableRecognizer.ocr" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">ocr(img, cls=True, **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Performs OCR on the provided image and extracts table text and bounding boxes.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>img</code></b>
+              (<code><span title="numpy.ndarray">ndarray</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Input image as a NumPy array.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>cls</code></b>
+              (<code><span title="bool">bool</span></code>, default:
+                  <code>True</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Whether to use classification.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional arguments passed to the OCR model.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.TableRecognizer.process_results" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">process_results(**kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Organizes text into table columns based on bounding box x-coordinates and returns a DataFrame.
+Ensures every column is populated with either text or None for all rows.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>row_tolerance</code></b>
+              (<code><span title="int">int</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Margin of error in pixels to assign elements to the correct row.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>col_tolerance</code></b>
+              (<code><span title="int">int</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Margin of error in pixels to assign elements to the correct column.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.TableRecognizer.render" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">render(img, save_full_path, font_path='../utils/simfang.ttf', **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Renders the recognized data onto the input image and saves it.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>img</code></b>
+              (<code><span title="numpy.ndarray">ndarray</span> | <span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Input image as an array or path.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>save_full_path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Full path to save the rendered image.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>font_path</code></b>
+              (<code><span title="str">str</span></code>, default:
+                  <code>&#39;../utils/simfang.ttf&#39;</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Path to the font used for rendering.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional arguments for rendering.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.ocr.TextRecognizer" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>TextRecognizer</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="OCR (mdify.src.ocr.OCR)" href="#mdify.src.ocr.OCR">OCR</a></code></p>
+
+
+        <p>Class for recognizing text from images using OCR.
+Two different models are used for headers and paragraphs as it has been observed that using only one of them for both yields less accurate results.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.TextRecognizer.paragraph_model_config">paragraph_model_config</span></code></b>
+              (<code><span title="dict">dict</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Configuration for paragraph-level OCR.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.TextRecognizer.header_reader">header_reader</span></code></b>
+              (<code><span title="easyocr.Reader">Reader</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Reader instance for header-level OCR.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.TextRecognizer.det_processor,">det_processor,</span></code></b>
+              (<code>(<span title="det_model">det_model</span>, <span title="rec_model">rec_model</span>, <span title="rec_processor">rec_processor</span>)</code>)
+          –
+          <div class="doc-md-description">
+            <p>Components for OCR processing.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.ocr.TextRecognizer.default_element_type">default_element_type</span></code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Default type of element to process ('paragraph').</p>
+          </div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.ocr.TextRecognizer.process_results" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">process_results(**kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Processes OCR results based on the specified element type (paragraph or header).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>element_to_process</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>either 'header' or 'paragraph'.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="mdify.src.output" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>mdify.src.output</code>
+
+
+</h3>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.output.OutputArtifact" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>OutputArtifact</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+
+        <p>Enum representing the types of artifacts to be saved.</p>
+
+
+<details class="types" open>
+  <summary>Types</summary>
+  <p>NONE (int): No artifacts are saved.
+ONLY_PICTURES (int): Only images are saved.
+ONLY_TABLES (int): Only tables are saved.
+ONLY_CHARTS (int): Only charts are saved.
+ONLY_FORMULAS (int): Only formulas are saved.
+PICTURES_AND_TABLES (int): Both images and tables are saved.
+PICTURES_AND_CHARTS (int): Both images and charts are saved.
+PICTURES_AND_FORMULAS (int): Both images and formulas are saved.
+TABLES_AND_CHARTS (int): Both tables and charts are saved.
+TABLES_AND_FORMULAS (int): Both tables and formulas are saved.
+CHARTS_AND_FORMULAS (int): Both charts and formulas are saved.
+PICTURES_TABLES_AND_CHARTS (int): Images, tables, and charts are saved.
+PICTURES_TABLES_AND_FORMULAS (int): Images, tables, and formulas are saved.
+PICTURES_CHARTS_AND_FORMULAS (int): Images, charts, and formulas are saved.
+TABLES_CHARTS_AND_FORMULAS (int): Tables, charts, and formulas are saved.
+ALL (int): All artifacts (images, tables, charts, formulas) are saved.</p>
+</details>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.output.OutputWriter" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>OutputWriter</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Handles the process of writing content and optionally saving specified types of artifacts.</p>
+
+
+<p><span class="doc-section-title">Methods:</span></p>
+    <ul>
+          <li class="doc-section-item field-body">
+            <b><code><a class="autorefs autorefs-internal" title="write (mdify.src.output.OutputWriter.write)" href="#mdify.src.output.OutputWriter.write">write</a></code></b>
+            –
+            <div class="doc-md-description">
+              <p>str, save_dir: str, filename: str):
+Writes the content to a file in the specified directory, creating the directory if needed.</p>
+            </div>
+          </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.output.OutputWriter.write" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">write(content, save_dir, filename)</code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-staticmethod"><code>staticmethod</code></small>
+  </span>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the content to a markdown file in the specified directory.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>content</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>The content to write to the file.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>save_dir</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Directory where the file will be saved.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>filename</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Name of the file (without extension).</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.output.WriteMode" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>WriteMode</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+
+        <p>Enum representing the modes for writing content with embedded or referenced artifacts.</p>
+
+
+<details class="modes" open>
+  <summary>Modes</summary>
+  <p>EMBEDDED (int): Artifacts (e.g., images, tables) are directly embedded in the output content.
+PLACEHOLDER (int): Placeholders for artifacts are added in the output content, requiring external references.
+DESCRIBED (int): Artifacts are described textually, without direct embedding or placeholders.</p>
+</details>
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="mdify.src.extractors" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>mdify.src.extractors</code>
+
+
+</h3>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="mdify.src.extractors.ContentExtractor" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>ContentExtractor</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Extracts content from a document image based on specified types such as text, tables, pictures, and more.
+This class delegates extraction tasks to specialized recognizers for text, tables, and pictures.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.extractors.ContentExtractor.text_recognizer">text_recognizer</span></code></b>
+              (<code><a class="autorefs autorefs-internal" title="TextRecognizer (mdify.src.ocr.TextRecognizer)" href="#mdify.src.ocr.TextRecognizer">TextRecognizer</a></code>)
+          –
+          <div class="doc-md-description">
+            <p>Recognizer for extracting textual elements.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.extractors.ContentExtractor.table_recognizer">table_recognizer</span></code></b>
+              (<code><a class="autorefs autorefs-internal" title="TableRecognizer (mdify.src.ocr.TableRecognizer)" href="#mdify.src.ocr.TableRecognizer">TableRecognizer</a></code>)
+          –
+          <div class="doc-md-description">
+            <p>Recognizer for extracting table elements.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+          <b><code><span title="mdify.src.extractors.ContentExtractor.picture_recognizer">picture_recognizer</span></code></b>
+              (<code><a class="autorefs autorefs-internal" title="PictureRecognizer (mdify.src.ocr.PictureRecognizer)" href="#mdify.src.ocr.PictureRecognizer">PictureRecognizer</a></code>)
+          –
+          <div class="doc-md-description">
+            <p>Recognizer for extracting picture elements.</p>
+          </div>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="mdify.src.extractors.ContentExtractor.extract" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python">extract(image_path, extract_type, **kwargs)</code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Method factory that extracts content from the specified image based on the type of element requested.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>image_path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to the input image of the document.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>extract_type</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Type of content to extract (e.g., 'text', 'table', 'picture', etc.).</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>**kwargs</code></b>
+          –
+          <div class="doc-md-description">
+            <p>Additional parameters for the specific extraction method.</p>
+          </div>
+        </li>
+    </ul>
+
+
+<p><span class="doc-section-title">Returns:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+<b><code>str</code></b> (              <code><span title="str">str</span></code>
+)          –
+          <div class="doc-md-description">
+            <p>Extracted content as a string.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="mdify.src.utils" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <code>mdify.src.utils</code>
+
+
+</h3>
+
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="mdify.src.utils.convert_image_to_pdf" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python">convert_image_to_pdf(image_path, pdf_path)</code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Converts an image file to a PDF.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>image_path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to the input image file.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>pdf_path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to save the output PDF file.</p>
+          </div>
+        </li>
+    </ul>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="mdify.src.utils.convert_to_jpeg" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python">convert_to_jpeg(im)</code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Converts an image to JPEG format.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>im</code></b>
+              (<code><span title="PIL.Image">Image</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>The input image.</p>
+          </div>
+        </li>
+    </ul>
+        <p>Returns:
+    PIL.Image: The converted image in JPEG format.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="mdify.src.utils.get_filename" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python">get_filename(path, include_extension=False)</code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Extracts the filename from a given path.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>path</code></b>
+              (<code><span title="str">str</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>The full path of the file.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>include_extension</code></b>
+              (<code><span title="bool">bool</span></code>, default:
+                  <code>False</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Whether to include the file extension. Defaults to False.</p>
+          </div>
+        </li>
+    </ul>
+        <p>Returns:
+    str: The extracted filename.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="mdify.src.utils.open_image" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python">open_image(img, to_numpy=False)</code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Opens an image file or array, converting it to JPEG format if necessary.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <ul>
+        <li class="doc-section-item field-body">
+            <b><code>img</code></b>
+              (<code><span title="str">str</span> | <span title="numpy.ndarray">ndarray</span></code>)
+          –
+          <div class="doc-md-description">
+            <p>Path to the image file or an image array.</p>
+          </div>
+        </li>
+        <li class="doc-section-item field-body">
+            <b><code>to_numpy</code></b>
+              (<code><span title="bool">bool</span></code>, default:
+                  <code>False</code>
+)
+          –
+          <div class="doc-md-description">
+            <p>Whether to return the image as a NumPy array. Defaults to False.</p>
+          </div>
+        </li>
+    </ul>
+        <p>Returns:
+    Union[np.ndarray, PIL.Image]: The opened image.</p>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
