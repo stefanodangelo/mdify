@@ -84,3 +84,22 @@ You can find the full text of the license here: [CC BY-NC 4.0](https://creativec
 
 ## ❞ Citation
 If you use this project, please download the citation from [Zenodo](https://doi.org/10.5281/zenodo.14795743) (scroll all the way down and then choose the format you prefer (e.g. Bibtex) from the *Export* dropdown).
+
+
+## 🔗 Acknowledgments  
+This project leverages several open-source repositories for different components:  
+
+- [pypdfium2](https://github.com/pypdfium2-team/pypdfium2) – PDF loading
+- [Ultralytics](https://github.com/ultralytics/ultralytics) – YOLO-based layout detection
+- [Supervision](https://github.com/roboflow/supervision) – Rendering layout elements
+- [Surya](https://github.com/VikParuchuri/surya) – Text recognition (primary OCR, though it's currently a bottleneck)
+- [EasyOCR](https://github.com/JaidedAI/EasyOCR) – Recognizing text headers and titles (solves Surya's issue with them)
+- [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) – Table recognition
+- [Optimum](https://github.com/huggingface/optimum) – Formula extraction model integration
+- [YOLOv10-Document-Layout-Analysis](https://huggingface.co/omoured/YOLOv10-Document-Layout-Analysis) – YOLO model parameters
+- [ChartDet](https://huggingface.co/stefanodangelo/chartdet) – Chart detection model parameters
+- [DePlot](https://huggingface.co/google/deplot) – Model for chart deconstruction  
+- [BLIP Image Captioning](https://huggingface.co/Salesforce/blip-image-captioning-large) – Image captioning model  
+- [Pix2Text-MFR](https://huggingface.co/breezedeus/pix2text-mfr) – Formula recognition model  
+
+A huge thanks to the developers and maintainers of these projects!
