@@ -1,5 +1,5 @@
-![PyPI](https://img.shields.io/pypi/v/mdify?color=red)
-![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY%20NC%204.0-lightgrey)
+[![PyPI](https://img.shields.io/pypi/v/mdify?color=red)](https://pypi.org/project/mdify/)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY%20NC%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14795743.svg)](https://doi.org/10.5281/zenodo.14795743)
 
 # MDify: Convert any document to Markdown  
