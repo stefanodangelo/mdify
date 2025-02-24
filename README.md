@@ -83,23 +83,23 @@ You can find the full text of the license here: [CC BY-NC 4.0](https://creativec
 
 
 ## ❞ Citation
-If you use this project, please cite:
+If you use this project, please download the citation from [Zenodo](https://doi.org/10.5281/zenodo.14795743) (scroll all the way down and then choose the format you prefer (e.g. Bibtex) from the *Export* dropdown).
 
-```bibtex
-@software{stefanodangelo_2025_14795744,
-  author       = {stefanodangelo},
-  title        = {stefanodangelo/mdify: v0.1.7},
-  month        = feb,
-  year         = 2025,
-  publisher    = {Zenodo},
-  version      = {v0.1.7},
-  doi          = {10.5281/zenodo.14795744},
-  url          = {https://doi.org/10.5281/zenodo.14795744},
-  swhid        = {swh:1:dir:9cda7ac71f22db73007af0687eaeec23024edf65
-                   ;origin=https://doi.org/10.5281/zenodo.14795743;vi
-                   sit=swh:1:snp:28dd41fcecc69045174bd49791411d5d702b
-                   faca;anchor=swh:1:rel:b1b56d07814198e8f2038595c4e0
-                   6bf2973e6ee2;path=stefanodangelo-mdify-99b6caf
-                  },
-}
-```
+
+## 🔗 Acknowledgments  
+This project leverages several open-source repositories for different components:  
+
+- [pypdfium2](https://github.com/pypdfium2-team/pypdfium2) – PDF loading
+- [Ultralytics](https://github.com/ultralytics/ultralytics) – YOLO-based layout detection
+- [Supervision](https://github.com/roboflow/supervision) – Rendering layout elements
+- [Surya](https://github.com/VikParuchuri/surya) – Text recognition (primary OCR, though it's currently a bottleneck)
+- [EasyOCR](https://github.com/JaidedAI/EasyOCR) – Recognizing text headers and titles (solves Surya's issue with them)
+- [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) – Table recognition
+- [Optimum](https://github.com/huggingface/optimum) – Formula extraction model integration
+- [YOLOv10-Document-Layout-Analysis](https://huggingface.co/omoured/YOLOv10-Document-Layout-Analysis) – YOLO model parameters
+- [ChartDet](https://huggingface.co/stefanodangelo/chartdet) – Chart detection model parameters
+- [DePlot](https://huggingface.co/google/deplot) – Model for chart deconstruction  
+- [BLIP Image Captioning](https://huggingface.co/Salesforce/blip-image-captioning-large) – Image captioning model  
+- [Pix2Text-MFR](https://huggingface.co/breezedeus/pix2text-mfr) – Formula recognition model  
+
+A huge thanks to the developers and maintainers of these projects!
