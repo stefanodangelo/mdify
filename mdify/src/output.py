@@ -1,3 +1,5 @@
+from mdify.src.utils import DOCUMENTS_SAVE_EXTENSION
+
 from enum import Enum
 import os
 
@@ -75,6 +77,6 @@ class OutputWriter:
             filename (str): Name of the file (without extension).
         """
         os.makedirs(save_dir, exist_ok=True)
-        save_path = os.path.join(save_dir, '.'.join([filename, 'md']))
+        save_path = os.path.join(save_dir, '.'.join([filename, DOCUMENTS_SAVE_EXTENSION]))
         with open(save_path, 'w') as f:
             f.write(content)

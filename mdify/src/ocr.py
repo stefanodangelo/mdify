@@ -227,7 +227,6 @@ class TableRecognizer(OCR):
                 boundaries.add(x_min)
         
         return sorted(list(boundaries))
-    
 
     def __find_header(self, column_boundaries: Iterable[float], bboxes: np.ndarray, tolerance: int = 10) -> int:
         """
@@ -244,7 +243,6 @@ class TableRecognizer(OCR):
         header_end = 1 # header is assumed to be one row
         # TODO: REFINE HEADER DETECTION ALGORITHM
         return header_end
-    
 
     def process_results(self, **kwargs):
         """
@@ -363,6 +361,7 @@ class TableRecognizer(OCR):
         ]:
             eval(f'df.to_{TABLES_SAVE_EXTENSION}(save_path, header=False)')
 
+
 class PictureRecognizer(OCR):
     """
     Class for recognizing and processing image-based data such as charts, captions, or formulas.
@@ -377,17 +376,17 @@ class PictureRecognizer(OCR):
         self.captioning_model = ImageCaptioningModel()
         self.formula_extraction_model = FormulaExtractionModel()
 
-    def __make_save_path(self, **kwargs):
+    def __make_save_path(self, extension=IMAGES_SAVE_EXTENSION, **kwargs):
         """
         Creates the save path for the image artifact.
         """
-        self.save_path = os.path.join(kwargs.get('save_dir', ARTIFACTS_DEFAULT_DIR), '.'.join([self.filename, IMAGES_SAVE_EXTENSION]))
+        self.save_path = os.path.join(kwargs.get('save_dir', ARTIFACTS_DEFAULT_DIR), '.'.join([self.filename, extension]))
 
-    def __save(self, **kwargs):
+    def __save_image(self, **kwargs):
         """
         Saves the processed image.
         """
-        self.__make_save_path(extension=IMAGES_SAVE_EXTENSION, **kwargs)
+        self.__make_save_path(**kwargs)
         img = self.image if type(self.image) == Image else Image.fromarray(self.image)
         img.save(self.save_path)
 
@@ -398,7 +397,7 @@ class PictureRecognizer(OCR):
         Args:
             save_dir (str): Directory to save OCR artifacts.
         """
-        self.__make_save_path(**kwargs)
+        self.__make_save_path(extension=IMAGES_SAVE_EXTENSION, **kwargs)
         is_chart = 'chart' in self.filename.lower()
         is_formula = 'formula' in self.filename.lower()
 
@@ -412,6 +411,7 @@ class PictureRecognizer(OCR):
             if is_chart:
                 result = self.chart_qa_model.predict(self.image_path)
                 self.extracted_text = result.to_markdown(index=False)
+                self.__make_save_path(extension=TABLES_SAVE_EXTENSION, **kwargs)
             elif is_formula:
                 self.extracted_text = self.formula_extraction_model.predict(self.image_path)
             else:
@@ -438,7 +438,7 @@ class PictureRecognizer(OCR):
             OutputArtifact.PICTURES_CHARTS_AND_FORMULAS.value,
             OutputArtifact.PICTURES_TABLES_AND_FORMULAS.value
         ]:
-            self.__save(**kwargs)
+            self.__save_image(**kwargs)
         elif self.save_artifacts.value in [
             OutputArtifact.ALL.value, 
             OutputArtifact.ONLY_PICTURES.value, 
@@ -449,4 +449,4 @@ class PictureRecognizer(OCR):
             OutputArtifact.PICTURES_CHARTS_AND_FORMULAS.value,
             OutputArtifact.PICTURES_TABLES_AND_CHARTS.value
         ]:
-            self.__save(**kwargs)
+            self.__save_image(**kwargs)

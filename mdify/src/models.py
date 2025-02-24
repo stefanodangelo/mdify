@@ -120,6 +120,8 @@ class HuggingFaceModel:
         if self.use_pixel_values:
             preds = preds.pixel_values
             pred_fn = 'batch_' + pred_fn
+        else:
+            preds = preds[0]
         output = eval(f'self.processor.{pred_fn}(preds, skip_special_tokens=True)')
         return self._postprocess(output)
     
